@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import stacks from "../data/stacks.json";
@@ -25,11 +24,7 @@ class StackList extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ setStack }, dispatch);
-}
-
 export default connect(
   null,
-  mapDispatchToProps
+  { setStack }
 )(StackList);
