@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Form, FormGroup, FormControl, FormLabel, Button } from "react-bootstrap";
+import { addStack } from "../actions";
 
 class StackForm extends Component {
   constructor() {
@@ -21,7 +23,8 @@ class StackForm extends Component {
   }
 
   addStack() {
-    console.log("Stackform state", this.state);
+    // console.log("Stackform state", this.state);
+    this.props.addStack(this.state);
   }
 
   updateCardPart(event, index, part) {
@@ -65,4 +68,7 @@ class StackForm extends Component {
   }
 }
 
-export default StackForm;
+export default connect(
+  null,
+  { addStack }
+)(StackForm);
