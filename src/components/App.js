@@ -5,7 +5,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h2>Fadecard Pro</h2>
+        <h2>Cardfade Pro</h2>
         <hr />
         <StackList />
       </div>
